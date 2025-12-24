@@ -1,0 +1,8 @@
+app_name: powerbird_cms
+app_root: /var/www/powerbird_cms
+local_root: ../powerbird_cms
+php_version: "8.3"
+domain_name: example.com
+db_name: powerbird
+db_user: powerbird
+db_password: change_me_secret_password

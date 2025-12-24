@@ -237,3 +237,31 @@ For issues or contributions, please refer to the project's contribution guidelin
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Ansible Deployment
+
+The project includes an Ansible playbook for automated deployment to an Ubuntu/Debian server. The deployment scripts are located in the `ansible` directory.
+
+### Prerequisites
+- Ansible installed on your local machine.
+- SSH access to the target server.
+- Root or sudo privileges on the target server.
+
+### Configuration
+1. Navigate to the `ansible` directory.
+2. Update the `inventory` file with your server's IP address.
+3. Update `vars.yml` with your specific configuration (domain name, database credentials, etc.).
+
+### Deploying
+Run the playbook:
+```bash
+cd ansible
+ansible-playbook -i inventory deploy.yml
+```
+
+This will:
+- Install Nginx, PHP 8.3, Composer, and Node.js on the server.
+- Sync the project files (excluding git/vendor).
+- Install PHP and Node dependencies.
+- Build frontend assets.
+- Configure Nginx.
